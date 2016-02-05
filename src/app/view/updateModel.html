@@ -1,0 +1,29 @@
+<!-- Update Modal -->
+
+      <div class="modal-header">
+      
+        <h4 class="modal-title" id="myModalLabel">Update </h4>
+      </div>
+      <div class="modal-body">
+       <form>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input   type="password" ng-model="update.password" class="form-control"  placeholder="Password">
+  </div>
+         <div class="form-group">
+    <label for="exampleInputEmail1">Sale Price</label>
+    <input type="number" ng-model="update.salePrice" class="form-control"  placeholder="salePrice">
+  </div>
+           <div class="form-group">
+    <label for="exampleInputPassword1">Note</label>
+    <input   type="text" ng-model="update.note" class="form-control"  placeholder="Note">
+  </div>
+
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="closeModel()">Close</button>
+        <button ng-click="updateMember(update)" type="button" class="btn btn-primary">Update</button>
+      </div>

@@ -1,0 +1,39 @@
+<!-- Add Modal -->
+
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">Add Member</h4>
+      </div>
+      <div class="modal-body">
+       <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="username" ng-model="addMember.username" class="form-control"  placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" ng-model="addMember.password" class="form-control"  placeholder="Password">
+  </div>
+ <div class="form-group" >
+    <label for="exampleInputPassword1">Role</label>
+<select class="form-control " ng-model="addMember.role" ng-options="r.value as r.label for r in roles" >
+
+</select>
+</div>
+ <div class="form-group">
+    <label for="exampleInputEmail1">Sale Price</label>
+    <input type="number" ng-model="addMember.salePrice" class="form-control"  placeholder="salePrice">
+  </div>
+<div class="form-group" >
+    <label for="exampleInputPassword1">Note</label>
+      <input type="text" ng-model="addMember.note" class="form-control"  placeholder="Note">
+
+</div>
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="closeModel()">Close</button>
+        <button ng-click="saveMember(addMember)" type="button" class="btn btn-primary">Save</button>
+      </div>
+

@@ -1,0 +1,18 @@
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+
+<div class="container">
+
+  
+<h3>Current Online Member</h3>{{isLogined()}}
+  <div class="row">
+  <div class="col-sm-8 col-md-8 col-md-offset-2">
+        
+      
+       <table class="table table-hover">
+           <thead><td>Member</td><td>Login Date</td><td>Take it offline</td></thead>
+ <tr ng-repeat="u in onlineusers"><td>{{u.userkey}}</td><td>{{u.date | date:'yyyy-MM-dd HH:mm:ss'}}</td><td><button ng-click="takeoffline(u._id)" type="button" class="pull-right btn btn-sm btn-info ">Offline</button></td></tr>
+          
+        </table>
+            <button ng-click="refreshOnlineMembers()" type="button" class="pull-right btn btn-sm btn-primary ">Refresh</button>   
+    </div>
+</div>
