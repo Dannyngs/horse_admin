@@ -6,16 +6,15 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($http, $scope,toastr,AuthService,$location) {
+  function LoginController($http, $scope,toastr,AuthService,$location,backendURL) {
 
  $scope.user={
-     id:'wsh',
-     password:'wsh'
+     
  }
 
  $scope.adminLogin=function(user){
 
-     $http.post('http://localhost/admin/login',{id:user.id,password:user.password}).then(function(res){
+     $http.post(backendURL+'/api/login',{id:user.id,password:user.password}).then(function(res){
         toastr.success("Login Successfully!!")
 
         AuthService.login(user,res.data.token);

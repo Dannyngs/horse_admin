@@ -1,21 +1,26 @@
-<nav class="navbar navbar-static-top navbar-inverse">
+<nav class=" navbar navbar-static-top navbar-inverse">
   <div class="container">
     <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       <a class="navbar-brand" href="#">
         Racing Pro Admin 
       </a>
+        
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
       <ul class="nav navbar-nav">
         
         <li><a ng-href="#member">Member</a></li>
        <li><a ng-href="#multiple">Multiple Login</a></li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
-      </ul>
+      
     </div>
   </div>
 </nav>

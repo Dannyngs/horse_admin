@@ -6,7 +6,7 @@
     .controller('MemberController', MemberController);
 
   /** @ngInject */
-  function MemberController($http, $scope,$rootScope,toastr,$uibModal) {
+  function MemberController($http, $scope,$rootScope,toastr,$uibModal,backendURL) {
 
     var updateModel,createModel;
 
@@ -26,7 +26,7 @@
 
   $rootScope.getMembers=function(){
 
-      $http.get('http://localhost/admin/api/users').then(function(res){
+      $http.get(backendURL+'/api/users').then(function(res){
           var dailyIncome = 0;
           var monthlyIncome = 0;
           var today = new Date();
@@ -75,7 +75,7 @@
 
  $scope.deleteMember=function(id){
      if(confirm("Sure to delete?")){
-     $http.delete('http://localhost/admin/api/users/'+id).then(function(res){
+     $http.delete(backendURL+'/api/users/'+id).then(function(res){
          toastr.success("Success");
          console.log(res.data)
           $rootScope.users=res.data;

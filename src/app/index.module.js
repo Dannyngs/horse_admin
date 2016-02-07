@@ -3,7 +3,8 @@
 
   angular
     .module('horseAdmin', ['ngResource', 'ui.router', 'ui.bootstrap', 'toastr'])
-    
+     .constant('backendURL', 'http://horseback-dev.ap-southeast-1.elasticbeanstalk.com/admin')
+  //.constant('backendURL', 'http://localhost/admin')
       .factory('AuthService',function(){
       var currentUser=null;
       var curentToken=null;
