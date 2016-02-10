@@ -3,10 +3,10 @@
 
   angular
     .module('horseAdmin')
-    .controller('MainController', MainController);
+    .controller('CurrentController', CurrentController);
 
   /** @ngInject */
-  function MainController($http, $scope,toastr,AuthService,backendURL) {
+  function CurrentController($http, $scope,toastr,AuthService,backendURL) {
 
 
 

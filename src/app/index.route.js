@@ -8,11 +8,11 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/view/main.html',
-        controller: 'MainController',
-        controllerAs: 'main',
+      .state('current', {
+        url: '/current',
+        templateUrl: 'app/view/current.html',
+        controller: 'CurrentController',
+        controllerAs: 'current',
         authRequired:true
       })
     .state('login', {
@@ -23,7 +23,7 @@
         authRequired:false
       })
     .state('member', {
-        url: '/member',
+        url: '/',
         templateUrl: 'app/view/member.html',
         controller: 'MemberController',
         controllerAs: 'member',
