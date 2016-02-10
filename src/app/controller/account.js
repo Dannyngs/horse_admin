@@ -64,7 +64,7 @@ $scope.getRange=function(from,to){
     $http.get(backendURL+'/api/rangetotal/'+from+'/'+to).then(function(res){
         
 $scope.rangetotal=res.data.totalcost;    
-$scope.totalusers=res.data.totalusers;
+$scope.totalusers=res.data.users;
 
 
       },function(err){
