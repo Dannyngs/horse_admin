@@ -1,0 +1,100 @@
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+
+<div class="container">
+
+
+<h3> Accounting</h3>
+<div class="row pad10">
+    <div class="col-md-3"><label>
+                From
+                </label>
+            <p class="input-group">
+                
+              <input type="text" class="form-control" uib-datepicker-popup ng-model="fromDate" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+
+        <div class="col-md-3"><label>
+                To
+                </label>
+            <p class="input-group">
+                
+              <input type="text" class="form-control" uib-datepicker-popup ng-model="toDate" is-open="popup2.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    <div class="col-md-3 col-md-offset-3 pad10">
+               <button ng-click="getRange(fromDate,toDate)" type="button" class="btn btn-primary ">Confirm</button>
+         
+         <!--<a  href="http://www.dreamprojectdia.com/api/backup" target="_blank"  class="btn-space pull-right btn btn-sm btn-primary "> Back Up</a>-->
+
+    </div>
+</div>
+
+<div class="row" >
+    <div class="table-responsive">
+                               <table class="table table-hover table-bordered ">
+                                   <thead><td><strong>Monthly Income</strong></td><td><strong>Daily Income</strong></td></thead>
+
+
+
+                                   <tr >
+                                        <td>{{ monthtotal | currency }}</td>
+                                       <td>{{ daytotal | currency }}</td>
+
+
+                                    </tr>
+
+
+                                </table>
+                                </div>
+</div>                           
+ <div class="row" >
+    <div class="table-responsive">
+                               <table class="table table-hover table-bordered ">
+                                   <thead><td><strong>From:</strong> {{fromDate|date : 'yyyy-MM-dd'}} <strong>To:</strong> {{toDate|date : 'yyyy-MM-dd'}}</td></thead>
+
+
+
+                                   <tr >
+                                        <td>{{ rangetotal | currency }}</td>
+                                       
+
+
+                                    </tr>
+
+
+                                </table>
+                                </div>
+</div>                           
+   
+    <div class="row pad10">                            
+    <div class="table-responsive">
+                               <table class="table table-hover table-bordered">
+                            <thead><td>Username ($ = admin)</td><td>Sale Price</td><td>Date</td></thead>
+
+
+
+                                   <tr ng-repeat="u in users | filter:search |orderBy:'-registeredOn'">
+                                       <td><span ng-show="u.role=='admin'">$</span>{{u.username}}</td>
+                                       
+
+                                        <td>{{u.salePrice|currency}}</td>
+
+                                        <td>{{u.registeredOn|date:'yyyy-MM-dd'}}</td>
+                                       </tr>
+
+
+                                </table>
+                                </div>
+ </div>                             
+    
+
+
+</div>
+

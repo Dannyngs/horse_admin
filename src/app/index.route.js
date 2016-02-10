@@ -35,6 +35,13 @@
         controller: 'MultipleController',
         controllerAs: 'multiple',
         authRequired:true
+      })
+        .state('account', {
+        url: '/accounting',
+        templateUrl: 'app/view/account.html',
+        controller: 'AccountController',
+        controllerAs: 'account',
+        authRequired:true
       });
 
     $urlRouterProvider.otherwise('/');
