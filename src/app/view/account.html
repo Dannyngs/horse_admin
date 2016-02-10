@@ -80,7 +80,7 @@
 
 
 
-                                   <tr ng-repeat="u in users | filter:search |orderBy:'-registeredOn'">
+                                   <tr ng-repeat="u in totalusers | filter:search |orderBy:'-registeredOn'">
                                        <td><span ng-show="u.role=='admin'">$</span>{{u.username}}</td>
                                        
 
