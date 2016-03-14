@@ -12,6 +12,11 @@
 
       $scope.user={};
       $scope.showpassword=false;
+      
+      if($rootScope.navText=='Dream Project'){
+          
+          $rootScope.dp_background=true;
+      }
 
 
 
