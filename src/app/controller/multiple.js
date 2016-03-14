@@ -6,14 +6,14 @@
     .controller('MultipleController', MultipleController);
 
   /** @ngInject */
-  function MultipleController($http, $scope,toastr,backendURL) {
+  function MultipleController($http, $rootScope,$scope,toastr) {
          
    
  
  
       function getMultipleLogin(){
          
-          $http.get(backendURL+'/api/multiplelogin').then(function(res){
+          $http.get($rootScope.backendURL+'/api/multiplelogin').then(function(res){
              
                 var lastUser=null;
               var multiples=[];
@@ -61,7 +61,7 @@
  
  $scope.emptyRecords = function(){
      
-     $http.delete(backendURL+'/api/multiplelogin/').then(function(res){
+     $http.delete($rootScope.backendURL+'/api/multiplelogin/').then(function(res){
          toastr.success(res.data,"Success");
          getMultipleLogin();
          console.log('empty!')

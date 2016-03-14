@@ -4,7 +4,8 @@
   angular
     .module('horseAdmin', ['ngResource', 'ui.router', 'ui.bootstrap', 'toastr'])
 
-     .constant('backendURL', 'http://racingprohk.ap-southeast-1.elasticbeanstalk.com/admin')
+     //.constant('backendURL', 'http://football-back-dev.ap-southeast-1.elasticbeanstalk.com/admin')
+  //http://racingprohk.ap-southeast-1.elasticbeanstalk.com/admin
   //.constant('backendURL', 'http://localhost/admin')
       .factory('AuthService',function(){
       var currentUser=null;

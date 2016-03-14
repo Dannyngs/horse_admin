@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
         </button>
       <a class="navbar-brand" href="#">
-        Racing Pro Admin 
+        {{navText}} 
       </a>
         
     </div>
@@ -16,10 +16,21 @@
     <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
       <ul class="nav navbar-nav">
         
-        <li><a ng-href="#">Member</a></li>
+        <!--<li  uib-dropdown><a ng-href="#" uib-dropdown-toggle>Member<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a ng-href="#">Dream Project</a></li>
+             <li><a ng-href="#">Racing Pro</a></li>
+            </ul>
+          </li>-->
+          
+          
+          
+          
+                    <li><a ng-href="#">Member</a></li>
           <li><a ng-href="#current">Online User</a></li>
        <li><a ng-href="#multiple">Multiple Login</a></li>
       <li><a ng-href="#accounting">Accounting</a></li>
+             <li><a href="#" ng-click="logout()">Log out</a></li>
       </ul>
 
       

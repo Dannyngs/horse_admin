@@ -14,7 +14,7 @@
 
       $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
-
+          
 
             if(toState.authRequired){
                  if (!AuthService.isLogined()) {

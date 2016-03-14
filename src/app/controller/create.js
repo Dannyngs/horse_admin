@@ -6,7 +6,7 @@
     .controller('CreateController', CreateController);
 
   /** @ngInject */
-  function CreateController($http, $scope,toastr,AuthService,$location, $uibModalInstance,$rootScope,backendURL) {
+  function CreateController($http, $scope,toastr,AuthService,$location, $uibModalInstance,$rootScope) {
 
       
       
@@ -21,7 +21,7 @@ $scope.roles=[
 $scope.saveMember  = function(user){
     
       if(user.password==""||user.username=="")return toastr.warning("Username or Password cannot be empty","Warning");
-    $http.post(backendURL+'/api/users',user).then(function(res){
+    $http.post( $rootScope.backendURL+'/api/users',user).then(function(res){
 
          toastr.success("Success");
        $rootScope.users=res.data;

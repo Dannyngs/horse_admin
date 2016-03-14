@@ -6,14 +6,14 @@
     .controller('CurrentController', CurrentController);
 
   /** @ngInject */
-  function CurrentController($http, $scope,toastr,AuthService,backendURL) {
+  function CurrentController($http,$scope,$rootScope,toastr,AuthService) {
 
 
 
 function getOnlineMembers(){
 
 
-      $http.get(backendURL+'/api/onlineusers').then(function(res){
+      $http.get($rootScope.backendURL+'/api/onlineusers').then(function(res){
           $scope.onlineusers=res.data;
 
 
@@ -39,7 +39,7 @@ function getOnlineMembers(){
 
   $scope.takeoffline=function(id){
 
-     $http.delete(backendURL+'/api/onlineusers/'+id).then(function(res){
+     $http.delete($rootScope.backendURL+'/api/onlineusers/'+id).then(function(res){
          toastr.success(res.data);
          getOnlineMembers();
      },function(err){})

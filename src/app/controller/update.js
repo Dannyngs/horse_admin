@@ -6,7 +6,7 @@
     .controller('UpdateController', UpdateController);
 
   /** @ngInject */
-  function UpdateController($http, $scope,$rootScope,toastr,AuthService,$location, $uibModalInstance,selected_user,backendURL) {
+  function UpdateController($http, $scope,$rootScope,toastr,AuthService,$location, $uibModalInstance,selected_user) {
 
   $scope.update={};
      $scope.update._id=selected_user._id;
@@ -18,7 +18,7 @@
  $scope.updateMember = function(user){
 
      if(user.password=="")return toastr.warning("Password cannot be empty","Warning");
-     $http.put(backendURL+'/api/users/'+user._id,user).then(function(res){
+     $http.put($rootScope.backendURL+'/api/users/'+user._id,user).then(function(res){
           $rootScope.users=res.data;
          toastr.success("Success");
          $uibModalInstance.close();

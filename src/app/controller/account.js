@@ -6,7 +6,7 @@
     .controller('AccountController', AccountController);
 
   /** @ngInject */
-  function AccountController($http, $scope,toastr,AuthService,$location,backendURL) {
+  function AccountController($http, $scope,$rootScope,toastr,AuthService,$location) {
 
  
  
@@ -40,7 +40,7 @@ $scope.open1 = function() {
       
  $scope.adminLogin=function(user){
 
-     $http.post(backendURL+'/api/login',{id:user.id,password:user.password}).then(function(res){
+     $http.post( $rootScope.backendURL+'/api/login',{id:user.id,password:user.password}).then(function(res){
         toastr.success("Login Successfully!!")
 
         AuthService.login(user,res.data.token);
@@ -61,7 +61,7 @@ $scope.getRange=function(from,to){
     if(!from||!to)
         return toastr.error('Please select a date range first.')
         
-    $http.get(backendURL+'/api/rangetotal/'+from+'/'+to).then(function(res){
+    $http.get( $rootScope.backendURL+'/api/rangetotal/'+from+'/'+to).then(function(res){
         
 $scope.rangetotal=res.data.totalcost;    
 $scope.totalusers=res.data.users;
@@ -79,7 +79,7 @@ $scope.totalusers=res.data.users;
 
  
 function getTotal(){
-    $http.get(backendURL+'/api/daytotal').then(function(res){
+    $http.get( $rootScope.backendURL+'/api/daytotal').then(function(res){
         
 $scope.daytotal=res.data.daytotal;    
         
@@ -91,7 +91,7 @@ $scope.daytotal=res.data.daytotal;
 
       })
     
-    $http.get(backendURL+'/api/monthtotal').then(function(res){
+    $http.get($rootScope.backendURL+'/api/monthtotal').then(function(res){
         
 $scope.monthtotal=res.data.monthtotal;    
         

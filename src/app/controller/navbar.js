@@ -21,7 +21,17 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController() {
+    function NavbarController($rootScope,$scope,AuthService,toastr,$location) {
+        
+         $scope.navText=$rootScope.navText;
+        $scope.logout=function(){
+            
+            if(confirm("Sure to Log out?")){
+            toastr.success("Log out Successfully!!")
+            AuthService.logout();
+            $location.path("/login")
+            }
+        }
 
     }
   }
