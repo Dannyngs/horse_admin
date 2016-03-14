@@ -31,7 +31,7 @@ $rootScope.navText ='Admin Panel';
      else{
          
           $rootScope.backendURL="http://football-back-dev.ap-southeast-1.elasticbeanstalk.com/admin";
-          $rootScope.navText ='Dream Project ';
+          $rootScope.navText ='Dream Project';
      }
     
      

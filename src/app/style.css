@@ -16,3 +16,11 @@
     background-color: #000;
     border-color:#2F2F2F;
 }
+.greyback{
+    background-color: #606060;
+    color:white;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(245,245,245,0.4);
+}
