@@ -5,3 +5,14 @@
       padding:20px 0px;
 
 }
+.blackbtn{
+    color:white;
+    background-color: #383838;
+    border-color:#2F2F2F;
+}
+
+.blackbtn:hover{
+    color:white;
+    background-color: #000;
+    border-color:#2F2F2F;
+}

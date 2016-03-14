@@ -12,7 +12,7 @@
         <div class="btn-group">
             
             
-                    <label class="btn btn-success" ng-click="doit()" ng-model="platform" uib-btn-radio="'Dream Project'">Dream Project</label>
+                    <label class="btn blackbtn" ng-click="doit()" ng-model="platform" uib-btn-radio="'Dream Project'">Dream Project</label>
 
         <label class="btn btn-danger" ng-click="doit()" ng-model="platform" uib-btn-radio="'Racing Pro'">Racing Pro</label>
             
@@ -21,6 +21,7 @@
             
     </div>
               </div>
+       <h5>Login to: <span>{{platform}}</span></h5>
   <div class="form-group">
     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID" ng-model="user.id">
   </div>
@@ -28,7 +29,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="user.password">
   </div>
   
-  <button type="submit" class="btn btn-primary" ng-click="adminLogin(user)">Login</button>
+  <button type="submit" class="btn blackbtn" ng-click="adminLogin(user)">Login</button>
 </form>
   </div>
 
