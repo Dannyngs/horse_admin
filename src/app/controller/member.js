@@ -27,42 +27,23 @@
 
       }
 
-
-
-  $rootScope.getMembers=function(){
-
-      $http.get( $rootScope.backendURL+'/api/users').then(function(res){
-          var dailyIncome = 0;
-          var monthlyIncome = 0;
-          var today = new Date();
-          console.log('todayis :'+today.getDate())
-          for(var i=0;i<res.data.length;i++)
-              {
-                  var user = res.data[i];
-
-
-                  if(user.registeredOn && user.salePrice){
-                      var regDate = new Date(user.registeredOn)
-
-                      if( regDate.getFullYear() == today.getFullYear() && regDate.getMonth() == today.getMonth() )
-                          {
-                              monthlyIncome += parseInt(user.salePrice)
-                                if( regDate.getDate() == today.getDate() )
-                                    dailyIncome += parseInt(user.salePrice)
-                           }
-
-                  }
-
-
-
-
-
-              }
-         //  console.log(dailyIncome)
-          $rootScope.users=res.data;
-          $scope.monthlyIncome = monthlyIncome
-          $scope.dailyIncome = dailyIncome
+      function getMemberCount(){
+         
+          $http.get( 'http://localhost:801/admin/api/usercount/').then(function(res){
+         $scope.memberCount=res.data.count;
+             
       },function(){
+
+      })
+      }
+
+      $rootScope.getMembers=function(pnum,count){
+          //'/api/users/'+pnum+'/'+count
+      $http.get( $rootScope.backendURL+'/api/users/').then(function(res){
+          
+         
+          $rootScope.users=res.data;
+         
 
       })
 
@@ -72,8 +53,8 @@
 
 
 
-   $rootScope.getMembers();
-
+        $rootScope.getMembers(1,10000);
+     // getMemberCount();
 
 
 
