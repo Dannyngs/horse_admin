@@ -17,7 +17,7 @@
 
       
         $scope.currentPage = 1;
-      $scope.itemsPerPage=200;
+      $scope.itemsPerPage=100;
 
   $scope.setPage = function (pageNo) {
     $scope.currentPage = pageNo;
