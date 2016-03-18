@@ -12,6 +12,27 @@
 
       $scope.user={};
       $scope.showpassword=false;
+       
+        /** @pagination */
+
+      
+        $scope.currentPage = 1;
+      $scope.itemsPerPage=200;
+
+  $scope.setPage = function (pageNo) {
+    $scope.currentPage = pageNo;
+  };
+
+  $scope.pageChanged = function() {
+    $rootScope.getMembers(($scope.currentPage-1)*$scope.itemsPerPage,$scope.itemsPerPage);
+  };
+
+  
+  
+              /** @pagination */
+
+      
+      
       
       if($rootScope.navText=='Dream Project'){
           
@@ -29,17 +50,18 @@
 
       function getMemberCount(){
          
-          $http.get( 'http://localhost:801/admin/api/usercount/').then(function(res){
-         $scope.memberCount=res.data.count;
-             
+          $http.get($rootScope.backendURL+'/api/usercount/').then(function(res){
+        $scope.totalItems=res.data.count;
+        
+           
       },function(){
 
       })
       }
 
       $rootScope.getMembers=function(pnum,count){
-          //'/api/users/'+pnum+'/'+count
-      $http.get( $rootScope.backendURL+'/api/users/').then(function(res){
+          
+      $http.get($rootScope.backendURL+'/api/users/'+pnum+'/'+count).then(function(res){
           
          
           $rootScope.users=res.data;
@@ -53,8 +75,8 @@
 
 
 
-        $rootScope.getMembers(1,10000);
-     // getMemberCount();
+        $rootScope.getMembers($scope.currentPage,$scope.itemsPerPage);
+        getMemberCount();
 
 
 

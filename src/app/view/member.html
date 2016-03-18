@@ -20,7 +20,9 @@
 
                           
                                 
- <div class="row pad10">                            
+ <div class="row pad10">       
+     <uib-pagination rotate="true" boundary-links="true" force-ellipses="true" max-size="20" items-per-page="itemsPerPage" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
+
     <div class="table-responsive">
                                <table class="table table-hover table-bordered">
                             <thead><td>Username ($ = admin)</td><td>Password</td><td>Role</td><td>Sale Price</td><td>Note</td><td>Date</td><td>Delete/Update</td></thead>
@@ -46,6 +48,8 @@
 
                                 </table>
                                 </div>
+       
+       
  </div>                             
     
 
