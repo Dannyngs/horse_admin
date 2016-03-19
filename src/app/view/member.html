@@ -7,10 +7,16 @@
 <div class="row pad10">
     <div class="col-md-3 pad10">
         <div class="input-group">
-                              <input type="text" class="form-control" id="exampleInputAmount" placeholder="Username" ng-model="search.username">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>    </div>
+      <input type="text" class="form-control" placeholder="Username,Email,Phone,Note" ng-model="search_content">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="searchMember(search_content)">Search</button>
+      </span>
+    </div><!-- /input-group -->
+        
+       
     </div>
     <div class="col-md-3 col-md-offset-6 pad10">
+                       <button ng-click="getMembers(1,itemsPerPage)" type="button" class="btn btn-info ">Show All</button>
                <button ng-click="showpass()" type="button" class="btn btn-info ">Password</button>
          <button  ng-click="openCreate()"  type="button" class="btn btn-primary ">Add Member</button>
          <!--<a  href="http://www.dreamprojectdia.com/api/backup" target="_blank"  class="btn-space pull-right btn btn-sm btn-primary "> Back Up</a>-->

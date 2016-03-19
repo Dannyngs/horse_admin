@@ -12,7 +12,6 @@
 
       $scope.user={};
       $scope.showpassword=false;
-       
         /** @pagination */
 
       
@@ -27,56 +26,55 @@
     $rootScope.getMembers(($scope.currentPage-1)*$scope.itemsPerPage,$scope.itemsPerPage);
   };
 
-  
-  
-              /** @pagination */
-
-      
-      
-      
-      if($rootScope.navText=='Dream Project'){
+    if($rootScope.navText=='Dream Project'){
           
           $rootScope.dp_background=true;
       }
-
-
-
-
       $scope.showpass=function(){
 
            $scope.showpassword=!$scope.showpassword;
 
       }
 
-      function getMemberCount(){
-         
-          $http.get($rootScope.backendURL+'/api/usercount/').then(function(res){
-        $scope.totalItems=res.data.count;
-        
-           
-      },function(){
-
-      })
-      }
+     
+      
+      
+      
+     
 
       $rootScope.getMembers=function(pnum,count){
           
       $http.get($rootScope.backendURL+'/api/users/'+pnum+'/'+count).then(function(res){
           
          
-          $rootScope.users=res.data;
-         
+          $rootScope.users=res.data.users;
+         $scope.totalItems=res.data.total_count;
 
       })
+     
+     
 
   }
+      $rootScope.searchMember=function(keyword){
+        
+          $http.get($rootScope.backendURL+'/api/users/'+keyword).then(function(res){
+          
+         
+            $rootScope.users=res.data;
+            $scope.totalItems=res.data;
+            if(res.data.length>100)
+                {
+                    alert("We can only present 100 rows of result for you !")
+                }
+
+      })   
+      }
 
 
 
 
 
         $rootScope.getMembers($scope.currentPage,$scope.itemsPerPage);
-        getMemberCount();
 
 
 
