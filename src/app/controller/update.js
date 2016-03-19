@@ -22,6 +22,7 @@
           $rootScope.users=res.data;
          toastr.success("Success");
          $uibModalInstance.close();
+         $rootScope.setPage(1);
      },function(res){
          toastr.error(res.data,"Error");
 

@@ -25,6 +25,7 @@ $scope.saveMember  = function(user){
 
          toastr.success("Success");
        $rootScope.users=res.data;
+       $rootScope.setPage(1);
         user={};
      },function(res){
           toastr.error(res.data,"Error");

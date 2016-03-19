@@ -16,7 +16,7 @@
        
     </div>
     <div class="col-md-3 col-md-offset-6 pad10">
-                       <button ng-click="getMembers(1,itemsPerPage)" type="button" class="btn btn-info ">Show All</button>
+                       <button ng-click="getMembers(0)" type="button" class="btn btn-info ">Show All</button>
                <button ng-click="showpass()" type="button" class="btn btn-info ">Password</button>
          <button  ng-click="openCreate()"  type="button" class="btn btn-primary ">Add Member</button>
          <!--<a  href="http://www.dreamprojectdia.com/api/backup" target="_blank"  class="btn-space pull-right btn btn-sm btn-primary "> Back Up</a>-->
@@ -27,7 +27,7 @@
                           
                                 
  <div class="row pad10">       
-     <uib-pagination rotate="true" boundary-links="true" force-ellipses="true" max-size="20" items-per-page="itemsPerPage" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
+     <uib-pagination rotate="true" boundary-links="true" force-ellipses="true" max-size="20" items-per-page="itemsPerPage" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" ></uib-pagination>
 
     <div class="table-responsive">
                                <table class="table table-hover table-bordered">

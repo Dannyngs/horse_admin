@@ -24,3 +24,6 @@
 .table-hover > tbody > tr:hover {
     background-color: rgba(245,245,245,0.4);
 }
+.modal-dialog {
+    color:#333;
+}

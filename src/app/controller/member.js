@@ -18,12 +18,13 @@
         $scope.currentPage = 1;
       $scope.itemsPerPage=100;
 
-  $scope.setPage = function (pageNo) {
-    $scope.currentPage = pageNo;
-  };
+  $rootScope.setPage=function(pnum)
+  {
+       $scope.currentPage = pnum;
+  }
 
   $scope.pageChanged = function() {
-    $rootScope.getMembers(($scope.currentPage-1)*$scope.itemsPerPage,$scope.itemsPerPage);
+    $rootScope.getMembers(($scope.currentPage-1)*$scope.itemsPerPage);
   };
 
     if($rootScope.navText=='Dream Project'){
@@ -42,9 +43,8 @@
       
      
 
-      $rootScope.getMembers=function(pnum,count){
-          
-      $http.get($rootScope.backendURL+'/api/users/'+pnum+'/'+count).then(function(res){
+      $rootScope.getMembers=function(prows){
+      $http.get($rootScope.backendURL+'/api/users/'+prows+'/'+$scope.itemsPerPage).then(function(res){
           
          
           $rootScope.users=res.data.users;
@@ -74,7 +74,7 @@
 
 
 
-        $rootScope.getMembers($scope.currentPage,$scope.itemsPerPage);
+        $rootScope.getMembers(0);
 
 
 
@@ -85,6 +85,7 @@
          toastr.success("Success");
          console.log(res.data)
           $rootScope.users=res.data;
+          $rootScope.setPage(1);
      },function(err){})
      }
  }
