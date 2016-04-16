@@ -31,6 +31,9 @@
           
           $rootScope.dp_background=true;
       }
+     
+      
+      
       $scope.showpass=function(){
 
            $scope.showpassword=!$scope.showpassword;

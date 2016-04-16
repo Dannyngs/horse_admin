@@ -1,0 +1,49 @@
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+
+<div class="container">
+
+  
+<h3>Race Manager</h3>{{isLogined()}}
+  <div class="row">
+  <div class="col-sm-8 col-md-8 col-md-offset-2">
+          <form class="form-inline text-right" style="padding:20px;"  >
+             
+              <div class="input-group">       
+        <select class="form-control" placeholder="Username,Email,Phone,Note"  ng-model="selectedlink">
+        <option ng-repeat="race in races" value="{{race.link}}">{{race.no}}</option>
+      
+      </select>     
+                  <span class="input-group-btn">
+
+                  <button ng-click="selectRace()"  class="btn btn-primary " type="submit" >{{selectText}}</button>
+                 </span>
+              </div>
+   
+  
+    </form>
+      
+     
+      
+      
+      
+      <table class="table table-hover table-bordered">
+          <thead><td colspan="3"> {{selectedRace.ri}}  <span style="color:red" ng-show="selectedRace._id" ><br/><span>Notice： Records in this race have been manually sorted. To reset the order please press 'Reset' button.</span></td></thead>
+           <thead><td>Horse No.</td><td>Horse Name</td><td>Horse Score</td></thead>
+          
+ <tr ng-repeat="horse in selectedRace.hl">
+     
+     
+     <td>{{horse.no}}</td>
+     <td>{{horse.horse}}</td>
+     <td><input type="number" ng-model="horse.grade"/></td>
+    
+          
+
+</tr>
+          
+        </table>
+      <button ng-show="selectedRace" class="btn btn-primary " ng-click="saveRace()">{{saveText}}</button>
+       <button ng-show="selectedRace._id" class="btn btn-danger " ng-click="resetRace()"  >{{resetText}}</button>
+
+    </div>
+</div>

@@ -42,7 +42,15 @@
         controller: 'AccountController',
         controllerAs: 'account',
         authRequired:true
-      });
+      })
+     .state('race', {
+        url: '/race',
+        templateUrl: 'app/view/race.html',
+        controller: 'RaceController',
+        controllerAs: 'race',
+        authRequired:true
+      })
+    ;
 
     $urlRouterProvider.otherwise('/');
   }
