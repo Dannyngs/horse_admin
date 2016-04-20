@@ -9,6 +9,7 @@
   function RaceController($http,$scope,$rootScope,toastr,AuthService) {
 
 var backendURL='http://racingprohk.ap-southeast-1.elasticbeanstalk.com';//a seperate link
+      //var backendURL='http://localhost'
 $scope.selectText='Select Race';
 $scope.resetText='Reset';
 $scope.saveText='Save';
