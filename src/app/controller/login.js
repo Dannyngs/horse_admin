@@ -30,7 +30,7 @@ $rootScope.navText ='Admin Panel';
          }
      else{
          
-          $rootScope.backendURL="http://deamprojectback.ap-southeast-1.elasticbeanstalk.com/admin";
+          $rootScope.backendURL="http://dreamprojet2back-env.ap-northeast-1.elasticbeanstalk.com/admin";
           $rootScope.navText ='Dream Project';
      }
     
